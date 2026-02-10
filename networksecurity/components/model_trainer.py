@@ -25,16 +25,16 @@ from sklearn.ensemble import (
 )
 import mlflow
 from mlflow import sklearn as mlflow_sklearn
-from urllib.parse import urlparse
+# from urllib.parse import urlparse
 
 import dagshub
-#dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
+
+dagshub.init(repo_owner='MadhumantiSaha', repo_name='Network-Security', mlflow=True)
+
 
 # os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
 # os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
 # os.environ["MLFLOW_TRACKING_PASSWORD"]="7104284f1bb44ece21e0e2adb4e36a250ae3251f"
-
-
 
 
 
@@ -139,7 +139,7 @@ class ModelTrainer:
         save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
 
         #model pusher
-        # save_object("final_model/model.pkl",best_model)
+        save_object("final_model/model.pkl",best_model)
         
 
         ## Model Trainer Artifact
