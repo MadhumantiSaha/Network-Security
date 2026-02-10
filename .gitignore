@@ -1,7 +1,5 @@
 venv
 .env
-check.py
 test_mongodb.py
 process.txt
 finalnetworksecurity.pdf
-test_mongodb.py
