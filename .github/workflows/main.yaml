@@ -29,6 +29,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Free disk space before Docker build
+        run: |
+          echo "Disk space before cleanup:"
+          df -h
+
+          sudo apt-get clean
+          docker system prune -af || true
+
+          echo "Disk space after cleanup:"
+          df -h
+
       - name: Install Utilities
         run: |
           sudo apt-get update
@@ -78,7 +89,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-      
+        
       
       - name: Pull latest images
         run: |
